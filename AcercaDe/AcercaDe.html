@@ -1,82 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca De</title>
-
-    <link rel="stylesheet" href="/AcercaDe/AcercaDe.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acerca De - WhiteMarketing</title>
+  <link rel="stylesheet" href="/AcercaDe/AcercaDe.css">
 </head>
 <body>
+  <div class="page-bg"></div>
+
+
+  <header class="navbar">
+    <div class="logo">
+      <span>White Marketing</span>
+      <img src="/imgs/logo WM.png" alt="Logo White Marketing">
+    </div>
+
+    <!-- título de la página dentro de la barra (opcional) -->
+    <div class="nav-title">Acerca De</div>
+
     
-    <nav id="navbar">
-        Sobre Nosotros
-        <button id="agregarComen">
-            Enviar 
-            Comentario
-            <div class="iconoComen">
-                <img src="/imgs/enviar.png" alt="">
-            </div>
-        </button>
-    </nav>
+  </header>
 
-    <div id="containerInfo">
-        <div class="flashcards" id="sobre">
-            <h2>Sobre Nosotros</h2>
-            <p>
-                Somos una agencia de marketing y publicidad enfocada en crear experiencias que conectan marcas con personas. 
-                Combinamos estrategia, creatividad y tecnología para impulsar el crecimiento de nuestros clientes mediante 
-                campañas efectivas, contenido atractivo y soluciones digitales innovadoras. Nuestro equipo está compuesto 
-                por profesionales apasionados que trabajan cada día para transformar ideas en resultados medibles, 
-                ayudando a las marcas a destacar en un mercado cada vez más competitivo.
-            </p>
-        </div>
-        <div class="flashcards" id="mision">
-            <h2>Mision</h2>
-            <p>
-                Impulsar el crecimiento de nuestros clientes mediante estrategias de marketing integrales, creativas y 
-                orientadas a datos. Nos comprometemos a ofrecer soluciones personalizadas que fortalezcan la presencia 
-                de marca, aumenten su alcance y generen conexiones auténticas con sus audiencias.
-            </p>
-        </div>
-        <div class="flashcards" id="vision">
-            <h2>Vision</h2>
-            <p>
-                Convertirnos en la agencia de marketing y publicidad líder en innovación y excelencia creativa, reconocida 
-                por transformar marcas en referentes dentro de sus industrias. Aspiramos a ser un aliado estratégico de 
-                empresas de todos los tamaños, ayudándoles a alcanzar su máximo potencial mediante comunicación efectiva 
-                y resultados sostenibles.
-            </p>
-        </div>
-    </div>
+  <!-- Contenido principal -->
+  <main class="main-content">
 
+    <!-- TÍTULO DEL CONTENEDOR PRINCIPAL -->
+    <h1 class="section-title">¿Quiénes Somos?</h1>
 
-    <div id="containerComent">
-        <div class="boxes">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
-            make a type specimen book. 
-        </div>
+    <section class="card" id="sobre">
+        Somos una agencia de marketing y publicidad enfocada en crear experiencias que conectan marcas con personas. 
+        Combinamos estrategia, creatividad y tecnología para impulsar el crecimiento de nuestros clientes mediante 
+        campañas efectivas, contenido atractivo y soluciones digitales innovadoras. Nuestro equipo está compuesto 
+        por profesionales apasionados que trabajan cada día para transformar ideas en resultados medibles, 
+        ayudando a las marcas a destacar en un mercado cada vez más competitivo.
+    </section>
+    <section class="card" id="mision">
+        Impulsar el crecimiento de nuestros clientes mediante estrategias de marketing integrales, creativas y 
+        orientadas a datos. Nos comprometemos a ofrecer soluciones personalizadas que fortalezcan la presencia 
+        de marca, aumenten su alcance y generen conexiones auténticas con sus audiencias.
+    </section>
+    <section class="card" id="vision">
+        Convertirnos en la agencia de marketing y publicidad líder en innovación y excelencia creativa, reconocida 
+        por transformar marcas en referentes dentro de sus industrias. Aspiramos a ser un aliado estratégico de 
+        empresas de todos los tamaños, ayudándoles a alcanzar su máximo potencial mediante comunicación efectiva 
+        y resultados sostenibles.
+    </section>
 
-        <div class="boxes">
+    <!-- TÍTULO DE COMENTARIOS -->
+    <h1 class="section-title">Comentarios De los Clientes</h1>
 
-        </div>
-    </div>
-
-
-    <div id="miModal" class="modal">
-    <div class="modal-content">
-      <span class="close-button">
-        <div class="iconoCerrar">
-            <img src="/imgs/cerrar.png" alt="">
-        </div>
+    <section id="containerComent" class="card comments-grid">
+        <!-- Botón que abre el modal: mantenemos id para el JS -->
+    <button id="agregarComen" class="btn-nav">
+      Enviar Comentario
+      <span class="iconoComen" aria-hidden="true">
+        <img src="/imgs/enviar.png" alt="">
       </span>
-      <p>Agregar un nuevo Comentario a la página</p>
-      <input type="text" id="customInput" placeholder="Introduzca su Comentario">
-      <button type="button" id="customOk" class="btn btn-success">Aceptar</button>
-    </div>
-    </div>
+    </button>
 
-    <script src="/AcercaDe/js/AcercaDE.js"></script>
+        <div class="boxes">
+            Lorem Ipsum…
+        </div>
+
+        <div class="boxes empty"></div>
+    </section>
+</main>
+
+
+  <!-- Modal (mantén id's para JS) -->
+  <div id="miModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content card">
+      <button class="close-button" id="closeModal" aria-label="Cerrar diálogo">
+        <img src="/imgs/cerrar.png" alt="Cerrar">
+      </button>
+      <h3>Agregar un nuevo comentario</h3>
+      <textarea id="customInput" placeholder="Introduzca su comentario" rows="5"></textarea>
+      <div style="text-align:right;">
+        <button type="button" id="customOk" class="btn btn-primary">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/AcercaDe/js/AcercaDE.js"></script>
 </body>
 </html>
