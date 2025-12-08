@@ -17,11 +17,14 @@ btnevniar.addEventListener("click", (event) =>{
     };
 
     document.getElementById('customOk').onclick = function() {
-      let comentario = document.getElementById('customInput').value;
+      let textbox = document.getElementById('customInput');
+      let comentario = textbox.value;
       let caja = document.createElement("div");
       caja.classList.add("boxes");
       caja.textContent=comentario;
       contComentarios.appendChild(caja);
+
+      textbox.value="";
       document.getElementById('miModal').style.display = 'none';
     };
 
