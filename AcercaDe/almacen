@@ -1,0 +1,30 @@
+#containerComent{
+    width: 70%;
+    height: 600px;
+    background-color: rgb(200, 218, 218);    
+    margin-top: 110px;
+    padding: 60px;
+    justify-content: center;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+}
+
+.boxes{
+    margin-left: 60px;
+    width: 80%;
+    height: 80%;
+    border: 2px gray solid;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    background: #ffffff;
+    background: linear-gradient(330deg, rgba(255, 255, 255, 1) 0%, rgba(227, 227, 227, 1) 56%, rgba(252, 53, 53, 1) 100%);
+}
+
+.boxes:hover{
+    transform: scale(110%);
+    border: 5px #ff5e0e solid;
+    box-shadow: 0 8px 0 0 gray;
+}
