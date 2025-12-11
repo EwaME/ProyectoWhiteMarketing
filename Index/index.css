@@ -1018,24 +1018,20 @@ filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 
-/* =========================================
-    RESPONSIVE FIXES (White Marketing)
-   ========================================= */
 
-/* Ajuste general para móviles: Evitar scroll horizontal indeseado */
 html, body {
     overflow-x: hidden;
     width: 100%;
 }
 
-/* 1. HERO SECTION RESPONSIVE */
+
 @media (max-width: 968px) {
     .hero {
-        flex-direction: column-reverse; /* Imagen arriba, texto abajo en móviles si prefieres, o column normal */
+        flex-direction: column-reverse; 
         justify-content: center;
         text-align: center;
-        padding: 120px 20px 60px 20px; /* Más espacio arriba para el navbar fijo */
-        height: auto; /* Quitar min-height fijo para evitar espacios raros */
+        padding: 120px 20px 60px 20px; 
+        height: auto; 
     }
 
     .hero-left {
@@ -1044,23 +1040,23 @@ html, body {
     }
 
     .hero-right img {
-        width: 80%; /* Imagen más pequeña en móvil */
+        width: 80%; 
         max-width: 350px;
         margin-bottom: 20px;
     }
 
     .hero-Title {
-        font-size: 2.5rem; /* Título más pequeño */
+        font-size: 2.5rem; 
     }
 
     .hero-Subtitle {
-        margin: 0 auto 2rem auto; /* Centrar subtítulo */
+        margin: 0 auto 2rem auto; 
         font-size: 1rem;
     }
 
     .btn-group {
-        justify-content: center; /* Centrar botones */
-        flex-direction: column; /* Botones uno encima del otro en pantallas muy angostas */
+        justify-content: center; 
+        flex-direction: column; 
         gap: 15px;
         align-items: center;
     }
@@ -1073,7 +1069,6 @@ html, body {
     }
 }
 
-/* 2. SERVICES CARDS RESPONSIVE */
 @media (max-width: 768px) {
     .container-Services, .container {
         padding-left: 15px;
@@ -1086,41 +1081,38 @@ html, body {
     }
 
     .card {
-        width: 100% !important; /* Tarjeta ocupa todo el ancho */
+        width: 100% !important;
         max-width: 400px;
     }
     
-    /* Reducir paddings de secciones */
+
     section, .services-Section, .brands-Section, .location {
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
     
     .section-Title {
-        font-size: 2.2rem; /* Títulos de sección más legibles */
+        font-size: 2.2rem; 
     }
 }
 
-/* 3. MARCAS (BRANDS) RESPONSIVE */
 @media (max-width: 768px) {
     .brands-Logos {
         gap: 1.5rem;
     }
     
     .brands-Logos img {
-        height: 5rem; /* Reducir drásticamente el tamaño de logos en móvil */
+        height: 5rem; 
     }
 }
 
-/* 4. GALERÍA RESPONSIVE */
 @media (max-width: 768px) {
     .galeria-item {
-        width: 200px; /* Items más pequeños en móvil */
+        width: 200px; 
         height: 140px;
     }
 }
 
-/* 5. FOOTER RESPONSIVE */
 @media (max-width: 768px) {
     .footer-content-wrapper {
         flex-direction: column;
@@ -1129,7 +1121,7 @@ html, body {
     }
 }
 
-/* 6. NAVBAR MOBILE FIXES */
+
 @media (max-width: 900px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
