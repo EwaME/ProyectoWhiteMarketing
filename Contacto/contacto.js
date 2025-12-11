@@ -1,58 +1,68 @@
-(function() {
-    emailjs.init("TU_CLAVE_PUBLICA_EMAILJS");
-})();
+emailjs.init('3wG5uLEaQ08gb1rDH'); 
 
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
 
-    document.querySelectorAll('.error').forEach(el => el.textContent = '');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    let isValid = true;
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+        
+        if (!name.value || !email.value || !message.value) {
+            alert('Por favor, completa todos los campos requeridos (*).');
+            return;
+        }
 
-    const name = document.getElementById('name').value.trim();
-    if (name === '') {
-        document.getElementById('nameError').textContent = 'El nombre es obligatorio.';
-        isValid = false;
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...'; 
+
+        const serviceID = 'default_service'; 
+        const templateID = 'template_an4dm3b'; 
+        
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(function() {
+                successMessage.textContent = '✅ ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.';
+                successMessage.style.display = 'block';
+                form.reset(); 
+            }, function(error) {
+                successMessage.textContent = '❌ ¡Algo salió mal! Por favor, inténtalo de nuevo o contáctanos por WhatsApp.';
+                successMessage.style.display = 'block';
+                console.error('EmailJS Error:', error);
+            })
+            .finally(function() {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+                
+                // setTimeout(() => {
+                //     successMessage.style.display = 'none';
+                // }, 7000);
+            });
+    });
+});
+
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("show");
+});
+
+document.addEventListener("click", (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove("show");
     }
+});
 
-    const email = document.getElementById('email').value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email === '') {
-        document.getElementById('emailError').textContent = 'El correo electrónico es obligatorio.';
-        isValid = false;
-    } else if (!emailRegex.test(email)) {
-        document.getElementById('emailError').textContent = 'Ingresa un correo electrónico válido.';
-        isValid = false;
-    }
-
-    const message = document.getElementById('message').value.trim();
-    if (message === '') {
-        document.getElementById('messageError').textContent = 'El mensaje es obligatorio.';
-        isValid = false;
-    }
-
-    if (!isValid) return;
-
-    const templateParams = {
-        from_name: name,
-        from_email: email,
-        phone: document.getElementById('phone').value,
-        service: document.getElementById('service').value,
-        message: message,
-        to_email: 'tu_correo_destino@ejemplo.com'
-    };
-
-    emailjs.send('TU_SERVICIO_ID', 'TU_TEMPLATE_ID', templateParams)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            document.getElementById('successMessage').textContent = '¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.';
-            document.getElementById('successMessage').style.display = 'block';
-            document.getElementById('contactForm').reset();
-        }, function(error) {
-            console.log('FAILED...', error);
-            document.getElementById('successMessage').textContent = 'Error al enviar el mensaje. Inténtalo de nuevo.';
-            document.getElementById('successMessage').style.display = 'block';
-            document.getElementById('successMessage').style.background = '#f8d7da';
-            document.getElementById('successMessage').style.color = '#721c24';
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
+    });
 });

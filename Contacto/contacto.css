@@ -337,3 +337,37 @@
     .map-container iframe {
         height: 250px;
     }
+
+    .whatsapp-container {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366; /* Color de WhatsApp */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
+    border: none;
+    gap: 10px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1DA851;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+}
+
+.btn-whatsapp i {
+    font-size: 1.5rem;
+}
