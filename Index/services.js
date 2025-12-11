@@ -11,12 +11,11 @@ logosContainer.style.animationPlayState = 'running';
 });
 
 
-//**inicio botones */
+
 
 let trackDerecha = document.getElementById('track-derecha');
         let trackIzquierda = document.getElementById('track-izquierda');
 
-     
         let filaDerecha = document.querySelector('.galeria-fila-derecha');
         let filaIzquierda = document.querySelector('.galeria-fila-izquierda');
 
