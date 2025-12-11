@@ -10,36 +10,58 @@
   <div class="page-bg"></div>
 
 
-  <header class="navbar">
+<header class="navbar">
     <div class="logo">
-      <span>White Marketing</span>
-      <img src="/imgs/logo WM.png" alt="Logo White Marketing">
+        <span>White Marketing</span>
+        <img src="/imgs/logo WM.png" alt="1">
     </div>
-
-    <!-- título de la página dentro de la barra (opcional) -->
-    <div class="nav-title">Acerca De</div>
-
-    
-  </header>
+    <nav class="nav-links">
+        <a href="/Index/index.html">Inicio</a>
+        <a href="/AcercaDe/AcercaDe.html">Acerca De</a>
+        <a href="/servicesSupreme/img/services/servicios.html">Servicios</a>
+        <a href="portafolio.html">Portafolio</a>
+        <a href="/Contacto/contacto.html" class="btn-nav">Contáctanos</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="/Index/index.html">Inicio</a>
+        <a href="/AcercaDe/AcercaDe.html">Acerca De</a>
+        <a href="/servicesSupreme/img/services/servicios.html">Servicios</a>
+        <a href="portafolio.html">Portafolio</a>
+        <a href="/Contacto/contacto.html class="btn-mobile">Contáctanos</a>
+    </nav>
+</header>
 
   <!-- Contenido principal -->
   <main class="main-content">
 
     <!-- TÍTULO DEL CONTENEDOR PRINCIPAL -->
     <h1 class="section-title">¿Quiénes Somos?</h1>
+    <div class="divider"></div>
 
+    <div class="titleCard">Sobre Nosotros</div>
     <section class="card" id="sobre">
+      
         Somos una agencia de marketing y publicidad enfocada en crear experiencias que conectan marcas con personas. 
         Combinamos estrategia, creatividad y tecnología para impulsar el crecimiento de nuestros clientes mediante 
         campañas efectivas, contenido atractivo y soluciones digitales innovadoras. Nuestro equipo está compuesto 
         por profesionales apasionados que trabajan cada día para transformar ideas en resultados medibles, 
         ayudando a las marcas a destacar en un mercado cada vez más competitivo.
     </section>
+
+    <div class="titleCard">Mision</div>
     <section class="card" id="mision">
+      
         Impulsar el crecimiento de nuestros clientes mediante estrategias de marketing integrales, creativas y 
         orientadas a datos. Nos comprometemos a ofrecer soluciones personalizadas que fortalezcan la presencia 
         de marca, aumenten su alcance y generen conexiones auténticas con sus audiencias.
     </section>
+
+    <div class="titleCard">Vision</div>
     <section class="card" id="vision">
         Convertirnos en la agencia de marketing y publicidad líder en innovación y excelencia creativa, reconocida 
         por transformar marcas en referentes dentro de sus industrias. Aspiramos a ser un aliado estratégico de 
@@ -49,6 +71,7 @@
 
     <!-- TÍTULO DE COMENTARIOS -->
     <h1 class="section-title">Comentarios De los Clientes</h1>
+    <div class="divider"></div>
 
     <section id="containerComent" class="card comments-grid">
         <!-- Botón que abre el modal: mantenemos id para el JS -->
