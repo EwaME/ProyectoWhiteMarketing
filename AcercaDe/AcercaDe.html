@@ -1,109 +1,151 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Acerca De - WhiteMarketing</title>
-  <link rel="stylesheet" href="/AcercaDe/AcercaDe.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Acerca De - WhiteMarketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/Index/index.css">
+    <link rel="stylesheet" href="/AcercaDe/AcercaDe.css"> 
+    <link rel="icon" href="/imgs/logoWhiteMarketingICON.ico">
 </head>
 <body>
-  <div class="page-bg"></div>
+    <div class="page-bg"></div>
 
+    <header class="navbar">
+        <div class="logo">
+            <img src="/servicesSupreme/img/logoWhiteMarketing.png" alt="Logo White Marketing">
+        </div>
+        <nav class="nav-links">
+            <a href="/Index/index.html">Inicio</a>
+            <a href="/AcercaDe/AcercaDe.html">Acerca De</a>
+            <a href="/Index/index.html#services">Servicios</a>
+            <a href="/Index/index.html#galeria">Eventos</a>
+            <a href="/Contacto/contacto.html" class="btn-nav">Contáctanos</a>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="/Index/index.html">Inicio</a>
+            <a href="/AcercaDe/AcercaDe.html">Acerca De</a>
+            <a href="/Index/index.html#services">Servicios</a>
+            <a href="/Index/index.html#galeria">Eventos</a>
+            <a href="/Contacto/contacto.html" class="btn-mobile">Contáctanos</a>
+        </nav>
+    </header>
 
-<header class="navbar">
-    <div class="logo">
-        <span>White Marketing</span>
-        <img src="/imgs/logo WM.png" alt="1">
-    </div>
-    <nav class="nav-links">
-        <a href="/Index/index.html">Inicio</a>
-        <a href="/AcercaDe/AcercaDe.html">Acerca De</a>
-        <a href="/servicesSupreme/img/services/servicios.html">Servicios</a>
-        <a href="portafolio.html">Portafolio</a>
-        <a href="/Contacto/contacto.html" class="btn-nav">Contáctanos</a>
-    </nav>
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <nav class="mobile-menu" id="mobileMenu">
-        <a href="/Index/index.html">Inicio</a>
-        <a href="/AcercaDe/AcercaDe.html">Acerca De</a>
-        <a href="/servicesSupreme/img/services/servicios.html">Servicios</a>
-        <a href="portafolio.html">Portafolio</a>
-        <a href="/Contacto/contacto.html class="btn-mobile">Contáctanos</a>
-    </nav>
-</header>
-
-  <!-- Contenido principal -->
-  <main class="main-content">
-
-    <!-- TÍTULO DEL CONTENEDOR PRINCIPAL -->
-    <h1 class="section-title">¿Quiénes Somos?</h1>
-    <div class="divider"></div>
-
-    <div class="titleCard">Sobre Nosotros</div>
-    <section class="card" id="sobre">
-        Somos una agencia de marketing y publicidad enfocada en crear experiencias que conectan marcas con personas. 
-        Combinamos estrategia, creatividad y tecnología para impulsar el crecimiento de nuestros clientes mediante 
-        campañas efectivas, contenido atractivo y soluciones digitales innovadoras. Nuestro equipo está compuesto 
-        por profesionales apasionados que trabajan cada día para transformar ideas en resultados medibles, 
-        ayudando a las marcas a destacar en un mercado cada vez más competitivo.
-    </section>
-
-    <div class="titleCard">Misión</div>
-    <section class="card" id="mision">
-      
-        <p>Impulsar el crecimiento de nuestros clientes mediante estrategias de marketing integrales, creativas y 
-        orientadas a datos. Nos comprometemos a ofrecer soluciones personalizadas que fortalezcan la presencia 
-        de marca, aumenten su alcance y generen conexiones auténticas con sus audiencias.</p>
-    </section>
-
-    <div class="titleCard">Visión</div>
-    <section class="card" id="vision">
-        Convertirnos en la agencia de marketing y publicidad líder en innovación y excelencia creativa, reconocida 
-        por transformar marcas en referentes dentro de sus industrias. Aspiramos a ser un aliado estratégico de 
-        empresas de todos los tamaños, ayudándoles a alcanzar su máximo potencial mediante comunicación efectiva 
-        y resultados sostenibles.
-    </section>
-
-    
-    <h1 class="section-title">Comentarios De los Clientes</h1>
-    <div class="divider"></div>
-
-    <section id="containerComent" class="cardCom comments-grid">
-  
-    <button id="agregarComen" class="btn-nav">
-      Enviar Comentario
-      <span class="iconoComen" aria-hidden="true">
-        <img src="/imgs/enviar.png" alt="">
-      </span>
-    </button>
-
-        <div class="boxes">
-            Lorem Ipsum…
+    <main class="main-content">
+        
+        <div class="intro-header fade-in">
+            <span class="badge">Nuestra Filosofía</span>
+            <h1 class="section-title">La esencia de White Marketing</h1>
+            <p class="section-subtitle">No solo hacemos publicidad, creamos conexiones que impulsan el crecimiento real.</p>
         </div>
 
-        <div class="boxes empty"></div>
-    </section>
-</main>
+        <div class="info-grid fade-in">
+            <article class="cardAU" id="sobre">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+                    <h2 class="titleCard">¿Quiénes Somos?</h2>
+                </div>
+                <p>Somos una agencia de marketing y publicidad enfocada en crear experiencias que conectan marcas con personas. Combinamos estrategia, creatividad y tecnología para transformar ideas en resultados medibles.</p>
+            </article>
 
+            <article class="cardAU" id="mision">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h2 class="titleCard">Misión</h2>
+                </div>
+                <p>Impulsar el crecimiento de nuestros clientes mediante estrategias integrales y datos, fortaleciendo su presencia de marca y generando impacto real.</p>
+            </article>
 
-  <!-- Modal (mantén id's para JS) -->
-  <div id="miModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal-content card">
-      <button class="close-button" id="closeModal" aria-label="Cerrar diálogo">
-        <img src="/imgs/cerrar.png" alt="Cerrar">
-      </button>
-      <h3>Agregar un nuevo comentario</h3>
-      <textarea id="customInput" placeholder="Introduzca su comentario" rows="5"></textarea>
-      <div style="text-align:right;">
-        <button type="button" id="customOk" class="btn btn-primary">Aceptar</button>
-      </div>
+            <article class="cardAU" id="vision">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+                    <h2 class="titleCard">Visión</h2>
+                </div>
+                <p>Ser la agencia líder en innovación y excelencia creativa, transformando marcas en referentes de su industria y siendo el aliado estratégico número uno.</p>
+            </article>
+        </div>
+
+        <div class="comments-section fade-in">
+            <div class="comments-header">
+                <div class="header-text">
+                    <h2 class="section-title">Experiencias Reales</h2>
+                    <div class="divider-Header" style="margin: 10px 0;"></div>
+                    <p>Lo que dicen nuestros socios comerciales.</p>
+                </div>
+                
+                <button id="agregarComen" class="btn-primary">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <span>Dejar un comentario</span>
+                </button>
+            </div>
+
+            <div id="containerComent" class="comments-grid"></div>
+        </div>
+
+    </main>
+
+    <div id="miModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" id="closeModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-body">
+                <div class="icon-circle">
+                    <i class="fa-regular fa-comment-dots"></i>
+                </div>
+                <h3>Tu opinión nos importa</h3>
+                <p>Ayúdanos a seguir mejorando con tu feedback.</p>
+                <textarea id="customInput" placeholder="Cuéntanos tu experiencia con White Marketing..." rows="4"></textarea>
+                <div style="text-align: center;">
+                    <button type="button" id="customOk" class="btn-primary" style="width: 100%;">Publicar Reseña</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <script src="/AcercaDe/js/AcercaDE.js"></script>
+    <footer class="fresh-footer">
+      <div class="footer-content-wrapper">
+
+          <div class="footer-info">
+              <img src="/servicesSupreme/img/logoWhiteMarketingV.png" alt="Logo de la Agencia" class="fresh-logo">
+
+          </div>
+
+          <div class="footer-contact">
+              <h3 class="contact-title">Hablemos de tu Proyecto</h3>
+              <p class="contact-item">
+                  <i class="fas fa-envelope"></i>whitemarketinghn@gmail.com
+              <p class="contact-item">
+                  <i class="fas fa-phone-alt"></i> +504 9895-3353
+              </p>
+          </div>
+
+        <div class="footer-social">
+      <h3 class="contact-title">Síguenos</h3>
+      <div class="social-icons">
+          <a href="https://www.facebook.com/people/White-Marketing/100054319699151/" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.tiktok.com/@whitemarketing1" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+          </a>
+      </div>
+  </div>
+          
+      </div>
+
+      <div class="footer-bottom-fresh">
+          <p>
+              &copy; 2025 White Marketing. Todos los derechos reservados.
+          </p>
+      </div>
+  </footer>
+
+    <script src="/AcercaDe/AcercaDE.js"></script>
 </body>
 </html>
