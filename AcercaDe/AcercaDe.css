@@ -1,12 +1,185 @@
+/* --- RESET BÁSICO --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
-
-*{ box-sizing: border-box; margin:0; padding:0; font-family: "Poppins", sans-serif; }
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fcfcfc;
+    color: #333;
+    overflow-x: hidden;
+}
 
 .page-bg {
-  position: fixed; inset: 0;
-  background: linear-gradient(135deg, #ffffff 0%, #f4f4f6 100%);
-  z-index: -1;
+    position: fixed; 
+    inset: 0; 
+    z-index: -1;
+    /* Un degradado sutil rosado/blanco que combina con tu marca */
+    background: radial-gradient(circle at 10% 20%, rgb(255, 245, 245) 0%, rgb(255, 255, 255) 90%);
+}
+
+/* --- ANIMACIONES --- */
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 140px 20px 80px; /* Espacio para no chocar con el navbar */
+}
+
+/* Header de Sección */
+.intro-header { text-align: center; margin-bottom: 60px; }
+.badge {
+    background: rgba(176, 25, 31, 0.08); color: #B0191F;
+    padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 15px;
+}
+.section-title { font-size: 2.5rem; font-weight: 800; color: #111; margin-bottom: 10px; line-height: 1.2; }
+.section-subtitle { font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto; }
+.divider { width: 60px; height: 4px; background: #B0191F; margin: 15px 0 20px; border-radius: 2px; }
+
+/* --- INFO GRID (El arreglo visual clave) --- */
+.info-grid {
+    display: grid;
+    /* En PC: 3 columnas iguales. En móvil: se ajusta solo */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+/* Tarjeta grande que abarca todo en pantallas muy grandes si quieres */
+/* .full-width { grid-column: span 2; } (Opcional si quieres asimetría) */
+
+.cardAU {
+    background: #fff; padding: 40px; border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04); /* Sombra suave */
+    border: 1px solid rgba(0,0,0,0.03); 
+    transition: 0.3s ease;
+    position: relative; overflow: hidden;
+    height: 100%; /* Para que todas tengan la misma altura */
+    display: flex; flex-direction: column;
+}
+
+.cardAU:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 50px rgba(176, 25, 31, 0.1); /* Brillo rojo al hover */
+    border-color: rgba(176,25,31,0.15); 
+    border-left: 5px solid #B0191F; 
+}
+
+.card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.card-icon {
+    width: 50px; height: 50px; background: #fff0f0; color: #B0191F;
+    border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+}
+.titleCard { font-size: 1.4rem; font-weight: 700; color: #000; }
+.card p { color: #555; line-height: 1.7; font-size: 1rem; }
+
+/* --- COMENTARIOS (NUEVO DISEÑO) --- */
+.comments-section { position: relative; }
+.comments-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 40px; flex-wrap: wrap; gap: 20px;
+}
+.btn-primary {
+    background: #B0191F; color: white; border: none; padding: 12px 28px;
+    border-radius: 50px; font-weight: 600; cursor: pointer; transition: 0.3s;
+    display: inline-flex; align-items: center; gap: 10px; font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(176, 25, 31, 0.3);
+}
+.btn-primary:hover { background: #000; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+
+/* Grid de comentarios */
+.comments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* --- ESTILO DE LA TARJETA DE RESEÑA (Generada por JS) --- */
+.review-card {
+    background: #fff; padding: 30px; border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
+    border: 1px solid #f0f0f0;
+    transition: 0.3s; display: flex; flex-direction: column; gap: 15px;
+}
+.review-card:hover { transform: translateY(-5px); border-color: #B0191F; }
+
+.review-header { display: flex; align-items: center; justify-content: space-between; }
+.user-info { display: flex; align-items: center; gap: 10px; }
+.avatar {
+    width: 40px; height: 40px; background: #f2f2f2; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; color: #888; font-size: 1rem;
+}
+.stars { color: #FFC107; font-size: 0.8rem; letter-spacing: 1px; }
+.review-text { font-style: italic; color: #444; font-size: 0.95rem; line-height: 1.5; }
+.review-footer { font-size: 0.75rem; font-weight: 700; color: #B0191F; text-transform: uppercase; margin-top: auto; }
+
+/* --- MODAL --- */
+.modal {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+    z-index: 2000; align-items: center; justify-content: center;
+    padding: 20px;
+}
+.modal-content {
+    background: #fff; width: 100%; max-width: 450px;
+    padding: 40px 30px; border-radius: 24px; position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: modalSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes modalSlide { from { transform: translateY(50px) scale(0.9); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
+
+.close-button {
+    position: absolute; top: 15px; right: 15px; background: transparent;
+    border: none; font-size: 1.5rem; cursor: pointer; color: #ccc; transition: 0.3s;
+}
+.close-button:hover { color: #B0191F; transform: rotate(90deg); }
+
+.icon-circle {
+    width: 70px; height: 70px; background: #fff5f5; color: #B0191F;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; margin: 0 auto 20px;
+}
+.modal-body h3 { font-size: 1.5rem; color: #111; margin-bottom: 5px; }
+.modal-body p { color: #777; font-size: 0.9rem; margin-bottom: 25px; }
+
+textarea#customInput {
+    width: 100%; padding: 15px; border-radius: 12px; border: 2px solid #eee;
+    font-family: 'Montserrat', sans-serif; font-size: 1rem; transition: 0.3s;
+    background: #fafafa; resize: none; margin-bottom: 20px; outline: none;
+}
+textarea#customInput:focus { border-color: #B0191F; background: #fff; }
+.full-btn { width: 100%; justify-content: center; }
+
+/* --- PAGINACIÓN --- */
+#pagination {
+    grid-column: 1 / -1; display: flex; justify-content: center; gap: 8px; margin-top: 40px;
+}
+#pagination button {
+    width: 36px; height: 36px; border-radius: 50%; border: none;
+    background: white; color: #555; font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); cursor: pointer; transition: 0.3s;
+}
+#pagination button:hover, #pagination button.active { background: #B0191F; color: white; transform: scale(1.1); }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    /* En tablet/móvil, grid se hace 1 columna */
+    .info-grid { grid-template-columns: 1fr; } 
+    .full-width { grid-column: auto; }
+}
+@media (max-width: 600px) {
+    .section-title { font-size: 2rem; }
+    .cardAU { padding: 30px 20px; }
+    .comments-header { flex-direction: column; align-items: flex-start; }
+    .btn-primary { width: 100%; justify-content: center; }
+    .comments-grid { grid-template-columns: 1fr; }
 }
 
 
@@ -28,6 +201,7 @@
 
 .navbar:hover {
     background: rgba(255,255,255,0.95);
+    color: #B0191F;
 }
 
 .logo {
@@ -47,7 +221,7 @@
 }
 
 .logo span {
-    font-weight: 700; 
+    font-weight: 700;
     font-size: 1.2rem;
 }
 
@@ -78,6 +252,7 @@
 
 .nav-links a:hover::after {
     width: 100%;
+    color: #B0191F;
 }
 
 .btn-nav {
@@ -92,6 +267,7 @@
 .btn-nav:hover {
     transform: translateY(-2px);
     box-shadow: 0px 4px 10px rgba(176,25,31,0.4);
+    background-color: #000;
 }
 
 .hamburger {
@@ -153,272 +329,121 @@
     display: block;
 }
 
-
-
-.iconoComen { 
-  width: 26px; 
-  height:26px; 
-  display:inline-block; 
+/* =========================================
+   FIX DEL MENÚ HAMBURGUESA (Esto faltaba)
+   ========================================= */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* Oculta menú normal */
+    }
+    .hamburger {
+        display: flex; /* Muestra hamburguesa */
+    }
 }
 
-.iconoComen img { 
-  width:100%; 
-  height:100%; 
-  display:block; 
-}
-
-
-.main-content { 
-  padding: 110px 40px 60px; 
-  width:100%; 
-  display:flex; 
-  flex-direction:column; 
-  align-items:center; 
-  gap: 24px; }
-
-
-.card {
-  width: 45%;
-  max-width: 1100px;
-  background: #fff;
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-  border: 1px solid rgba(0,0,0,0.04);
-  transition: all 0.5s ease;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.titleCard{
-  width: 75%;
-  height: 45px;
-  text-align: center;
-  border-radius: 15px;
-  margin-bottom: 10px;
-  font-size: 4.5vh;
-  color: crimson;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 45px;
-  margin-top: 30px;
-}
-
-#sobre:hover{
-    transform: translateY(-10px);
-    border: 5px #9c181d solid;
-    box-shadow: 0 8px 0 0 gray;
-}
-
-#mision:hover{
-    transform: translateY(-10px);
-    border: 5px #9c181d solid;
-    box-shadow: 0 8px 0 0 gray;
-}
-
-#vision{
-  margin-bottom: 60px;
-}
-
-#vision:hover{
-    transform: translateY(-10px);
-    border: 5px #9c181d solid;
-    box-shadow: 0 8px 0 0 gray;
-}
-
-.card h2 { 
-  font-size: 1.8rem; 
-  margin-bottom: 12px; 
-  color: #111; 
-}
-
-.card p { 
-  color: #444; 
-  font-size: 1rem; 
-  line-height:1.6; 
-}
-
-.comments-grid { 
-  display:flex; 
-  gap:20px; 
-  flex-wrap:wrap; 
-  justify-content:center; 
-  padding:30px; 
-}
-
-.cardCom {
-  width: 75%;
-  max-width: 1100px;
-  background: #fff;
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-  border: 1px solid rgba(0,0,0,0.04);
-  transition: all 0.5s ease;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.boxes {
-  width: 46%;
-  min-height: 120px;
-  border-radius: 12px;
-  margin-top: 40px;
-  padding: 18px;
-  background: linear-gradient(330deg,#ffffff 0%, #efefef 60%, #fff6f6 100%);
-  border: 1px solid rgba(0,0,0,0.06);
-  color: #333;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-  transition: transform .25s ease, box-shadow .25s ease;
-  font-style: normal;
-  align-content: center;
-}
-.boxes:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(0,0,0,0.08); }
-.boxes.empty { display:flex; align-items:center; justify-content:center; color:#999; font-style:italic; }
-
-
-.modal {
-  display: none; 
-  position: fixed; inset:0; background: rgba(0,0,0,0.45);
-  z-index: 2000; align-items: center; justify-content: center;
-}
-.modal[aria-hidden="false"] { display: flex; }
-
-.modal-content {
-  width: 90%;
-  max-width: 640px;
-  padding: 26px;
-  border-radius: 14px;
-  position: relative;
-  background: #fff;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-  margin-left: 28%;
-  margin-top: 10%;
-}
-
-
-.close-button {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.close-button img { 
-  width:26px; 
-  height:26px; 
-  display:block; 
-}
-
-
-.section-title {
-    width: 95%;
-    max-width: 1100px;
-    font-size: 2.3rem;
-    font-weight: 700;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: #000000;
-    text-align: center;
-}
-
-.divider {
-    background-color:#B0191F;
-    width: 10%;
-    height: 0.25rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
-}
-
-
-#containerComent {
+/* =========================================
+   ESTILO "WOW" PARA COMENTARIOS
+   ========================================= */
+.review-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    /* Borde rojo a la izquierda (Toque de marca) */
+    border-left: 5px solid #B0191F; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Rebote suave */
     position: relative;
-    padding-top: 60px; 
+    overflow: hidden; /* Para que la marca de agua no se salga */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
+/* Efecto Hover: La tarjeta flota y brilla */
+.review-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(176, 25, 31, 0.15);
+}
 
-#agregarComen{
+/* Marca de agua decorativa en el fondo */
+.watermark-icon {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    padding: 10px 16px;
-    z-index: 10;
-    margin-top: 20px;
-    margin-right: 50px;
+    bottom: -10px;
+    right: 10px;
+    font-size: 5rem;
+    color: rgba(0, 0, 0, 0.03); /* Muy sutil */
+    z-index: 0;
+    pointer-events: none;
+    transition: 0.3s;
 }
 
-
-textarea#customInput {
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  resize: vertical;
-  font-size: 14px;
+.review-card:hover .watermark-icon {
+    color: rgba(176, 25, 31, 0.05); /* Se pone rojito al hover */
+    transform: rotate(-10deg) scale(1.1);
 }
 
-
-.btn-primary {
-  background: #B0191F;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  font-weight:600;
+/* Header de la review */
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
-.btn-primary:hover { 
-  transform: translateY(-3px); 
-  box-shadow: 0 12px 30px rgba(176,25,31,0.18); 
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-#pagination {
-  width: 100%;
-  flex-basis: 100%;
-  order: 999;        
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
+.avatar {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B0191F;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-
-#pagination button {
-  background: #ff7c7c;
-  color: #fff;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: transform .18s ease, box-shadow .18s ease;
+.stars {
+    color: #FFC107;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
 }
 
-#pagination button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(176,25,31,0.25);
+.review-text {
+    font-style: italic;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
 }
 
-
-#pagination button.active {
-  background: #B0191F;
-  box-shadow: 0 0 12px rgba(176,25,31,0.4);
+.review-footer {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #B0191F;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: auto;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-
-@media (max-width: 920px) {
-  .boxes { width: 100%; }
-  .main-content { padding: 100px 20px 60px; }
-  .nav-title { display:none; }
-  .logo img { height:28px; }
-
-  .modal-content{ margin-left: 10px;}
+.review-footer::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #B0191F;
+    border-radius: 50%;
 }
-
-
-
-
