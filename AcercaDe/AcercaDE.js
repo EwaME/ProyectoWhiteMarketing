@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    /* =========================================
-       1. LÓGICA DE COMENTARIOS
-       ========================================= */
+
     const btnevniar = document.getElementById("agregarComen");
     const contComentarios = document.getElementById("containerComent");
     const modal = document.getElementById("miModal");
@@ -9,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnAceptar = document.getElementById("customOk");
     const inputComentario = document.getElementById("customInput");
 
-    // Array de comentarios
     let comentarios = [
         "El servicio superó todas mis expectativas, ¡brutal!",
         "Profesionalismo puro. Mi marca ahora tiene otra cara.",
@@ -24,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let commentsPerPage = 6;
     let currentPage = 1;
 
-    // Verificar existencia de elementos clave
     if (contComentarios && modal) {
         
         function renderComments() {
@@ -35,9 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             pagina.forEach(texto => {
                 let card = document.createElement("div");
-                card.className = "review-card"; // Nueva clase CSS
+                card.className = "review-card";
 
-                // HTML con la nueva estructura y marca de agua
                 card.innerHTML = `
                     <div class="watermark-icon"><i class="fa-solid fa-quote-right"></i></div>
                     
@@ -61,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="review-footer">Cliente Verificado</div>
                 `;
 
-                // Animación de entrada
                 card.style.opacity = "0";
                 card.style.transform = "translateY(20px)";
                 contComentarios.appendChild(card);
@@ -85,18 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let paginacion = document.createElement("div");
             paginacion.id = "pagination";
-            // Estilos inline para asegurar layout
             paginacion.style.display = "flex";
             paginacion.style.justifyContent = "center";
             paginacion.style.gap = "10px";
             paginacion.style.marginTop = "40px";
-            paginacion.style.gridColumn = "1 / -1"; // Ocupa todo el ancho
+            paginacion.style.gridColumn = "1 / -1";
 
             for (let i = 1; i <= totalPaginas; i++) {
                 let btn = document.createElement("button");
                 btn.textContent = i;
                 
-                // Estilos básicos del botón
                 btn.style.width = "40px";
                 btn.style.height = "40px";
                 btn.style.borderRadius = "50%";
@@ -118,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.addEventListener("click", () => {
                     currentPage = i;
                     renderComments();
-                    // Scroll suave hacia los comentarios
                     const offset = contComentarios.getBoundingClientRect().top + window.scrollY - 150;
                     window.scrollTo({ top: offset, behavior: 'smooth' });
                 });
@@ -128,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
             contComentarios.parentNode.appendChild(paginacion);
         }
 
-        // --- Event Listeners del Modal ---
         if(btnevniar) {
             btnevniar.addEventListener("click", (e) => {
                 e.preventDefault();
@@ -160,13 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
             };
         }
 
-        // Iniciar renderizado
         renderComments();
     }
 
-    /* =========================================
-       2. LÓGICA DEL MENÚ HAMBURGUESA (FIXED)
-       ========================================= */
+
     const hamburger = document.getElementById("hamburger");
     const mobileMenu = document.getElementById("mobileMenu");
 
@@ -175,7 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
             mobileMenu.classList.toggle("show");
         });
 
-        // Cerrar menú al hacer click fuera
         document.addEventListener("click", (e) => {
             if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.remove("show");
@@ -183,14 +169,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Scroll suave para enlaces internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if(target){
                 target.scrollIntoView({ behavior: 'smooth' });
-                mobileMenu.classList.remove("show"); // Cerrar menú al hacer click
+                mobileMenu.classList.remove("show");
             }
         });
     });
