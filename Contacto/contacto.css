@@ -371,3 +371,168 @@
 .btn-whatsapp i {
     font-size: 1.5rem;
 }
+
+/* =========================================
+   Ajustes para Móviles y Tablets (Max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* --- General --- */
+    
+    /* Reducir el padding general de las secciones */
+    .contact-form-section,
+    .contact-info {
+        padding: 60px 20px;
+    }
+    
+    /* Reducir el padding del contenedor del formulario */
+    .form-container {
+        padding: 30px 20px;
+    }
+    
+    /* --- Hero Section --- */
+    
+    /* Reducir el padding y el alto de la sección de héroe */
+    .contact-hero {
+        height: 40vh; /* Altura más compacta */
+        padding: 80px 20px;
+    }
+    
+    /* Reducir el tamaño del título principal */
+    .contact-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    /* Reducir el tamaño del párrafo */
+    .contact-hero p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    /* Reducir el tamaño de los iconos del héroe */
+    .hero-icons i {
+        font-size: 1.5rem;
+    }
+
+    /* --- Formulario --- */
+
+    /* Forzar que los campos de dos columnas se apilen verticalmente */
+    .form-row {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 20px; /* Reducir la separación */
+    }
+
+    /* Reducir el tamaño del título del formulario */
+    .contact-form-section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .contact-form-section h2::after {
+        width: 100px; /* Reducir el ancho de la línea divisoria */
+    }
+
+    /* Reducir el padding de los inputs y botones */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .btn-submit,
+    .btn-whatsapp {
+        padding: 15px 25px;
+        font-size: 1rem;
+    }
+    
+    /* --- Información de Contacto (info-grid) --- */
+
+    /* Forzar que la cuadrícula se apile verticalmente o use menos columnas */
+    .info-grid {
+        /* Deja `repeat(auto-fit, minmax(280px, 1fr))` o cámbialo a 1fr en pantallas muy pequeñas */
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 25px;
+    }
+    
+    .info-item {
+        padding: 30px 20px;
+    }
+
+    /* Reducir el tamaño de los iconos de información */
+    .icon-bg {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .info-item h3 {
+        font-size: 1.4rem;
+    }
+    
+    /* --- Mapa --- */
+    
+    .contact-map {
+        padding: 40px 20px;
+    }
+
+    .map-container iframe {
+        height: 200px; /* Hacer el mapa más compacto */
+    }
+
+    /* --- Footer --- */
+    
+    .footer-content-wrapper {
+        grid-template-columns: 1fr; /* Forzar el apilamiento vertical */
+        gap: 30px;
+        text-align: center;
+    }
+
+    .fresh-logo {
+        max-width: 150px;
+        margin: 0 auto 10px;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+    
+    .footer-social {
+        order: 3; /* Mover la sección social al final si es necesario */
+    }
+}
+
+/* =========================================
+   Ajustes para Tablets (Max-width: 1024px)
+   ========================================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+    
+    /* Reducir el padding de las secciones en tablet */
+    .contact-form-section,
+    .contact-info {
+        padding: 90px 30px;
+    }
+    
+    /* Reducir el padding del contenedor del formulario */
+    .form-container {
+        padding: 40px;
+    }
+
+    /* Ajustar el tamaño del texto para hacerlo más compacto */
+    .contact-hero h1 {
+        font-size: 3.5rem;
+    }
+    .contact-hero p {
+        font-size: 1.2rem;
+    }
+    
+    .form-row {
+        gap: 20px; /* Reducir ligeramente la separación horizontal */
+    }
+    
+    /* Ajustar la rejilla de información para tablet si no se ajusta bien */
+    .info-grid {
+        gap: 20px;
+    }
+}
