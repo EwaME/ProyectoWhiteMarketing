@@ -26,15 +26,13 @@ function addInfiniteLoop(trackId) {
             const items = Array.from(track.children);
             items.forEach(item => {
                 const clone = item.cloneNode(true);
-                clone.setAttribute('aria-hidden', true); // Accesibilidad
+                clone.setAttribute('aria-hidden', true); 
                 track.appendChild(clone);
             });
         }
     }
 
-    // Aplicar a las marcas
-    // NOTA: En tu HTML tienes .brands-Logos, asegúrate de que sea fácil de seleccionar.
-    // Te sugiero añadirle un ID o usar la clase:
+
     const brandsContainer = document.querySelector('.brands-Logos');
     if(brandsContainer) {
         const brandsItems = Array.from(brandsContainer.children);
@@ -44,7 +42,58 @@ function addInfiniteLoop(trackId) {
         });
     }
 
-    // Aplicar a las galerías derecha e izquierda
     addInfiniteLoop('#track-derecha');
     addInfiniteLoop('#track-izquierda');
 
+
+    let logosContainer = document.querySelector('.brands-Logos');
+let  logos = logosContainer.innerHTML; 
+logosContainer.innerHTML += logos;     
+
+
+logosContainer.addEventListener('mouseenter', () => {
+logosContainer.style.animationPlayState = 'paused';
+});
+logosContainer.addEventListener('mouseleave', () => {
+logosContainer.style.animationPlayState = 'running';
+});
+
+
+
+
+let trackDerecha = document.getElementById('track-derecha');
+        let trackIzquierda = document.getElementById('track-izquierda');
+
+        let filaDerecha = document.querySelector('.galeria-fila-derecha');
+        let filaIzquierda = document.querySelector('.galeria-fila-izquierda');
+
+        let duplicarContenido = (trackElement) => {
+            if (trackElement && trackElement.innerHTML.trim() !== '') {
+                let contenidoOriginal = trackElement.innerHTML;
+            
+                trackElement.innerHTML += contenidoOriginal;
+            }
+        };
+
+    
+        let configurarControl = (filaElement, trackElement) => {
+            if (filaElement && trackElement) {
+              
+                filaElement.addEventListener('mouseenter', () => {
+                    trackElement.style.animationPlayState = 'paused';
+                });
+
+            
+                filaElement.addEventListener('mouseleave', () => {
+                    trackElement.style.animationPlayState = 'running';
+                });
+            }
+        };
+
+
+        duplicarContenido(trackDerecha);
+        configurarControl(filaDerecha, trackDerecha);
+
+
+        duplicarContenido(trackIzquierda);
+        configurarControl(filaIzquierda, trackIzquierda);
