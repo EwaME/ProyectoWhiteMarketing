@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitButton.disabled = false;
                 submitButton.innerHTML = originalButtonText;
                 
-                // setTimeout(() => {
-                //     successMessage.style.display = 'none';
-                // }, 7000);
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 7000);
             });
     });
 });

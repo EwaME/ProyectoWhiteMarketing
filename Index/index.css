@@ -889,15 +889,11 @@ filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 
 
 .galeria-fila-derecha .galeria-track {
-    animation: moverDerecha 50s linear infinite;
+    animation: moverDerecha 45s linear infinite;
 }
 
-
-
-
-
 .galeria-fila-izquierda .galeria-track {
-    animation: moverIzquierda 50s linear infinite;
+    animation: moverIzquierda 45s linear infinite;
 }
 
 .galeria-fila::before,
@@ -914,7 +910,7 @@ filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 
 .galeria-fila::before {
     left: 0;
- 
+
     background: linear-gradient(to right,var(--color-background, #ffffff), transparent); 
 }
 
@@ -1019,4 +1015,123 @@ filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         flex-basis: 100%;
         min-width: auto;
     }
+}
+
+
+/* =========================================
+    RESPONSIVE FIXES (White Marketing)
+   ========================================= */
+
+/* Ajuste general para móviles: Evitar scroll horizontal indeseado */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* 1. HERO SECTION RESPONSIVE */
+@media (max-width: 968px) {
+    .hero {
+        flex-direction: column-reverse; /* Imagen arriba, texto abajo en móviles si prefieres, o column normal */
+        justify-content: center;
+        text-align: center;
+        padding: 120px 20px 60px 20px; /* Más espacio arriba para el navbar fijo */
+        height: auto; /* Quitar min-height fijo para evitar espacios raros */
+    }
+
+    .hero-left {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    .hero-right img {
+        width: 80%; /* Imagen más pequeña en móvil */
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+
+    .hero-Title {
+        font-size: 2.5rem; /* Título más pequeño */
+    }
+
+    .hero-Subtitle {
+        margin: 0 auto 2rem auto; /* Centrar subtítulo */
+        font-size: 1rem;
+    }
+
+    .btn-group {
+        justify-content: center; /* Centrar botones */
+        flex-direction: column; /* Botones uno encima del otro en pantallas muy angostas */
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .btn-group a {
+        margin-right: 0;
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+/* 2. SERVICES CARDS RESPONSIVE */
+@media (max-width: 768px) {
+    .container-Services, .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card-Grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100% !important; /* Tarjeta ocupa todo el ancho */
+        max-width: 400px;
+    }
+    
+    /* Reducir paddings de secciones */
+    section, .services-Section, .brands-Section, .location {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .section-Title {
+        font-size: 2.2rem; /* Títulos de sección más legibles */
+    }
+}
+
+/* 3. MARCAS (BRANDS) RESPONSIVE */
+@media (max-width: 768px) {
+    .brands-Logos {
+        gap: 1.5rem;
+    }
+    
+    .brands-Logos img {
+        height: 5rem; /* Reducir drásticamente el tamaño de logos en móvil */
+    }
+}
+
+/* 4. GALERÍA RESPONSIVE */
+@media (max-width: 768px) {
+    .galeria-item {
+        width: 200px; /* Items más pequeños en móvil */
+        height: 140px;
+    }
+}
+
+/* 5. FOOTER RESPONSIVE */
+@media (max-width: 768px) {
+    .footer-content-wrapper {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+}
+
+/* 6. NAVBAR MOBILE FIXES */
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    
 }
