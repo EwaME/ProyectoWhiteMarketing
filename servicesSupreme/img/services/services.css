@@ -4,12 +4,11 @@
     box-sizing: border-box;
 }
 
-/* Variables de color para fácil mantenimiento (opcional, pero recomendado) */
 :root {
     /* --- COLORES PRINCIPALES --- */
-    --color-primary: #D72323; /* ¡El Rojo de tu logo! Para acentos, divisores, botones. */
+    --color-primary: #D72323; 
 
-    /* Versión clara del Rojo para fondos de icono (ej. background: primary/10) */
+
     --color-primary-light: rgba(215, 35, 35, 0.08);
 
     /* --- FONDOS Y BORDES --- */
@@ -19,15 +18,15 @@
     --color-border: #E8E8E8; /* Borde de la tarjeta (Gris muy claro) */
 
     /* --- TEXTO --- */
-    --color-foreground: #1A1A1A; /* Texto principal (Negro profundo, elegante) */
-    --color-muted-foreground: #71717A; /* Texto secundario (Gris pizarra moderno) */
+    --color-foreground: #1A1A1A; /* Texto principal  */
+    --color-muted-foreground: #71717A; /* Texto secundario */
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* --- SECCIÓN PRINCIPAL --- */
@@ -134,8 +133,8 @@ i{
 
 .services-Card:hover {
     border-color: var(--color-primary);
-    transform: translateY(-8px); /* hover:-translate-y-2 (8px) */
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* hover:shadow-xl */
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
 }
 
 .services-Card:hover .container-Icon {
@@ -146,23 +145,22 @@ i{
     color: var(--color-card-bg)
 }
 
-/* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
+/* --- RESPONSIVIDAD --- */
 
-/* Pantallas medianas (md: grid-cols-2 en Tailwind, ej. tablets > 768px) */
+
 @media (min-width: 768px) {
     .services-Card {
-        /* Aproximadamente un 50% menos el gap. (100% / 2) - gap */
         width: calc(50% - 1rem); 
     }
 }
 
-/* Pantallas grandes (lg: grid-cols-3 en Tailwind, ej. laptops > 1024px) */
+
 @media (min-width: 1024px) {
     .section-title {
-        font-size: 3.75rem; /* text-5xl o text-6xl */
+        font-size: 3.75rem; 
     }
     .services-Card {
-        /* Aproximadamente un 33.33% menos el gap. (100% / 3) - gap */
+ 
         width: calc(33.333% - 1.333rem); 
     }
 }
@@ -201,10 +199,10 @@ position: relative;
   content: "";
   position: absolute;
   top: 0;
-  width: 80px; /* ancho del difuminado */
+  width: 80px; 
   height: 100%;
   z-index: 2;
-  pointer-events: none; /* no bloquea interacción */
+  pointer-events: none; 
 }
 
 .brands-Track::before {
