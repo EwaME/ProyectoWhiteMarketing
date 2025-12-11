@@ -10,24 +10,38 @@
   <div class="page-bg"></div>
 
 
-  <header class="navbar">
+<header class="navbar">
     <div class="logo">
-      <span>White Marketing</span>
-      <img src="/imgs/logo WM.png" alt="Logo White Marketing">
+        <span>White Marketing</span>
+        <img src="/imgs/logo WM.png" alt="1">
     </div>
-
-    <!-- título de la página dentro de la barra (opcional) -->
-    <div class="nav-title">Acerca De</div>
-
-    
-  </header>
+    <nav class="nav-links">
+        <a href="/Index/index.html">Inicio</a>
+        <a href="/AcercaDe/AcercaDe.html">Acerca De</a>
+        <a href="/servicesSupreme/img/services/servicios.html">Servicios</a>
+        <a href="portafolio.html">Portafolio</a>
+        <a href="/Contacto/contacto.html" class="btn-nav">Contáctanos</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="/Index/index.html">Inicio</a>
+        <a href="/AcercaDe/AcercaDe.html">Acerca De</a>
+        <a href="/servicesSupreme/img/services/servicios.html">Servicios</a>
+        <a href="portafolio.html">Portafolio</a>
+        <a href="/Contacto/contacto.html class="btn-mobile">Contáctanos</a>
+    </nav>
+</header>
 
   <!-- Contenido principal -->
   <main class="main-content">
 
     <!-- TÍTULO DEL CONTENEDOR PRINCIPAL -->
     <h1 class="section-title">¿Quiénes Somos?</h1>
-    <div class="divider-Header"></div>
+    <div class="divider"></div>
 
     <div class="titleCard">Sobre Nosotros</div>
     <section class="card" id="sobre">
@@ -57,6 +71,7 @@
 
     <!-- TÍTULO DE COMENTARIOS -->
     <h1 class="section-title">Comentarios De los Clientes</h1>
+    <div class="divider"></div>
 
     <section id="containerComent" class="card comments-grid">
         <!-- Botón que abre el modal: mantenemos id para el JS -->
