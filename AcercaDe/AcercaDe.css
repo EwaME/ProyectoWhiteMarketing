@@ -1,5 +1,8 @@
-/* --- RESET BÁSICO --- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -12,66 +15,73 @@ body {
     position: fixed; 
     inset: 0; 
     z-index: -1;
-    /* Un degradado sutil rosado/blanco que combina con tu marca */
     background: radial-gradient(circle at 10% 20%, rgb(255, 245, 245) 0%, rgb(255, 255, 255) 90%);
 }
 
-/* --- ANIMACIONES --- */
 .fade-in {
     animation: fadeIn 0.8s ease-out forwards;
     opacity: 0;
     transform: translateY(20px);
 }
+
 @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
-/* --- CONTENIDO PRINCIPAL --- */
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 140px 20px 80px; /* Espacio para no chocar con el navbar */
+    padding: 140px 20px 80px;
 }
 
-/* Header de Sección */
-.intro-header { text-align: center; margin-bottom: 60px; }
-.badge {
-    background: rgba(176, 25, 31, 0.08); color: #B0191F;
-    padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 15px;
+.intro-header { 
+    text-align: center; 
+    margin-bottom: 60px; 
 }
+
+.badge {
+    background: rgba(176, 25, 31, 0.08); 
+    color: #B0191F;
+    padding: 6px 14px; 
+    border-radius: 20px; 
+    font-size: 0.85rem; 
+    font-weight: 700;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    display: inline-block; 
+    margin-bottom: 15px;
+}
+
 .section-title { font-size: 2.5rem; font-weight: 800; color: #111; margin-bottom: 10px; line-height: 1.2; }
 .section-subtitle { font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto; }
 .divider { width: 60px; height: 4px; background: #B0191F; margin: 15px 0 20px; border-radius: 2px; }
 
-/* --- INFO GRID (El arreglo visual clave) --- */
 .info-grid {
     display: grid;
-    /* En PC: 3 columnas iguales. En móvil: se ajusta solo */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-bottom: 100px;
 }
 
-/* Tarjeta grande que abarca todo en pantallas muy grandes si quieres */
-/* .full-width { grid-column: span 2; } (Opcional si quieres asimetría) */
+
 
 .cardAU {
     background: #fff; padding: 40px; border-radius: 24px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.04); /* Sombra suave */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04); 
     border: 1px solid rgba(0,0,0,0.03); 
     transition: 0.3s ease;
     position: relative; overflow: hidden;
-    height: 100%; /* Para que todas tengan la misma altura */
+    height: 100%;
     display: flex; flex-direction: column;
 }
 
 .cardAU:hover { 
     transform: translateY(-8px); 
-    box-shadow: 0 20px 50px rgba(176, 25, 31, 0.1); /* Brillo rojo al hover */
+    box-shadow: 0 20px 50px rgba(176, 25, 31, 0.1); 
     border-color: rgba(176,25,31,0.15); 
     border-left: 5px solid #B0191F; 
 }
 
 .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+
 .card-icon {
     width: 50px; height: 50px; background: #fff0f0; color: #B0191F;
     border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
@@ -79,28 +89,47 @@ body {
 .titleCard { font-size: 1.4rem; font-weight: 700; color: #000; }
 .card p { color: #555; line-height: 1.7; font-size: 1rem; }
 
-/* --- COMENTARIOS (NUEVO DISEÑO) --- */
-.comments-section { position: relative; }
+.comments-section { 
+    position: relative; 
+}
+
 .comments-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    margin-bottom: 40px; flex-wrap: wrap; gap: 20px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-end;
+    margin-bottom: 40px; 
+    flex-wrap: wrap; 
+    gap: 20px;
 }
 .btn-primary {
-    background: #B0191F; color: white; border: none; padding: 12px 28px;
-    border-radius: 50px; font-weight: 600; cursor: pointer; transition: 0.3s;
-    display: inline-flex; align-items: center; gap: 10px; font-size: 0.95rem;
+    background: #B0191F; 
+    color: white; 
+    border: none; 
+    padding: 12px 28px;
+    border-radius: 50px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: 0.3s;
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px; 
+    font-size: 0.95rem;
     box-shadow: 0 4px 15px rgba(176, 25, 31, 0.3);
 }
-.btn-primary:hover { background: #000; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+.btn-primary:hover { 
+    background: #000; 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
+}
 
-/* Grid de comentarios */
+
 .comments-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px;
 }
 
-/* --- ESTILO DE LA TARJETA DE RESEÑA (Generada por JS) --- */
+
 .review-card {
     background: #fff; padding: 30px; border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
@@ -119,7 +148,7 @@ body {
 .review-text { font-style: italic; color: #444; font-size: 0.95rem; line-height: 1.5; }
 .review-footer { font-size: 0.75rem; font-weight: 700; color: #B0191F; text-transform: uppercase; margin-top: auto; }
 
-/* --- MODAL --- */
+
 .modal {
     display: none; position: fixed; inset: 0;
     background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
@@ -157,7 +186,6 @@ textarea#customInput {
 textarea#customInput:focus { border-color: #B0191F; background: #fff; }
 .full-btn { width: 100%; justify-content: center; }
 
-/* --- PAGINACIÓN --- */
 #pagination {
     grid-column: 1 / -1; display: flex; justify-content: center; gap: 8px; margin-top: 40px;
 }
@@ -168,9 +196,8 @@ textarea#customInput:focus { border-color: #B0191F; background: #fff; }
 }
 #pagination button:hover, #pagination button.active { background: #B0191F; color: white; transform: scale(1.1); }
 
-/* --- RESPONSIVE --- */
+
 @media (max-width: 900px) {
-    /* En tablet/móvil, grid se hace 1 columna */
     .info-grid { grid-template-columns: 1fr; } 
     .full-width { grid-column: auto; }
 }
@@ -329,60 +356,54 @@ textarea#customInput:focus { border-color: #B0191F; background: #fff; }
     display: block;
 }
 
-/* =========================================
-   FIX DEL MENÚ HAMBURGUESA (Esto faltaba)
-   ========================================= */
+
 @media (max-width: 900px) {
     .nav-links {
-        display: none; /* Oculta menú normal */
+        display: none;
     }
     .hamburger {
-        display: flex; /* Muestra hamburguesa */
+        display: flex;
     }
 }
 
-/* =========================================
-   ESTILO "WOW" PARA COMENTARIOS
-   ========================================= */
+
 .review-card {
     background: #fff;
     padding: 30px;
     border-radius: 16px;
-    /* Borde rojo a la izquierda (Toque de marca) */
     border-left: 5px solid #B0191F; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Rebote suave */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
-    overflow: hidden; /* Para que la marca de agua no se salga */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Efecto Hover: La tarjeta flota y brilla */
+
 .review-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 40px rgba(176, 25, 31, 0.15);
 }
 
-/* Marca de agua decorativa en el fondo */
+
 .watermark-icon {
     position: absolute;
     bottom: -10px;
     right: 10px;
     font-size: 5rem;
-    color: rgba(0, 0, 0, 0.03); /* Muy sutil */
+    color: rgba(0, 0, 0, 0.03);
     z-index: 0;
     pointer-events: none;
     transition: 0.3s;
 }
 
 .review-card:hover .watermark-icon {
-    color: rgba(176, 25, 31, 0.05); /* Se pone rojito al hover */
+    color: rgba(176, 25, 31, 0.05);
     transform: rotate(-10deg) scale(1.1);
 }
 
-/* Header de la review */
 .review-header {
     display: flex;
     justify-content: space-between;
