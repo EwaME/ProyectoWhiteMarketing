@@ -236,7 +236,7 @@ body {
 }
 
 
-/* Buttons */
+
 
 .btn-group {
     margin-top: 40px;
@@ -572,7 +572,7 @@ section h2 {
 
 
 
-/*servicios y marcas*/
+
 
 
 
@@ -583,20 +583,20 @@ section h2 {
 
     --color-primary-light: rgba(215, 35, 35, 0.08);
 
-    /* --- FONDOS Y BORDES --- */
+
     --color-card-bg: #FFFFFF; 
     --color-background: #F9F9F9;
     --color-background-alt: #e5e2e2;;
     --color-border: #E8E8E8; 
 
-    /* --- TEXTO --- */
+
     --color-foreground: #1A1A1A; 
     --color-muted-foreground: #71717A; 
 }
 
 
 
-/* --- SECCIÓN PRINCIPAL --- */
+
 
 .services-Section {
     background-color: var(--color-background);
@@ -612,7 +612,7 @@ section h2 {
     padding-right: 1rem;
 }
 
-/* ---SECCION DEL HEADER--- */
+
 
 .section-Header {
     text-align: center;
@@ -641,7 +641,7 @@ section h2 {
     margin-right: auto;
 }
 
-/* --- CONTENEDOR DE TARJETAS --- */
+
 
 .services-Grid {
     display: flex;
@@ -652,7 +652,7 @@ section h2 {
     margin-right: auto;
 }
 
-/* --- CONTENEDOR DE TARJETAS UNIVERSAL --- */
+
 .card-Grid {
     display: flex;
     flex-wrap: wrap;
@@ -662,7 +662,6 @@ section h2 {
     margin-right: auto;
 }
 
-/* --- TARJETAS UNIVERSALES --- */
 .card {
     width: 100%;
     background-color: var(--color-card-bg);
@@ -707,7 +706,7 @@ section h2 {
     line-height: 1.5;
 }
 
-/* --- TARJETAS DE PROCESO --- */
+
 #process .card-Grid {
   display: flex;
   flex-wrap: nowrap;
@@ -721,7 +720,7 @@ section h2 {
 }
 
 
-/* --- INTERACCIONES HOVER --- */
+
 .card:hover {
     border-color: var(--color-primary);
     transform: translateY(-8px); 
@@ -737,7 +736,6 @@ section h2 {
     color: var(--color-card-bg);
 }
 
-/* --- RESPONSIVIDAD --- */
 @media (min-width: 768px) {
     .card {
         width: calc(50% - 1rem); 
@@ -763,7 +761,6 @@ section h2 {
 
 
 
-/* --- SECCIÓN DE MARCAS --- */
 
 
 .container-Brands {
@@ -837,7 +834,6 @@ filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 
 
 
-/*GALERIA DE EVENTOS*/
 
 .galeria-fila {
     overflow: hidden; 
@@ -921,7 +917,7 @@ filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     background: linear-gradient(to left, var(--color-background, #ffffff), transparent);
 }
 
-/* --- FOOTER --- */
+
 
 .fresh-footer {
     background-color: var(--color-background);
